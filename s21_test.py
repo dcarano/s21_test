@@ -14,3 +14,9 @@ def plot_x_by_class_y(*, table, x_column, y_column):
   pd.crosstab(table[x_column], table[y_column]).plot(kind='bar', figsize=(15,8), grid=True, logy=True)
   return None
 
+def remove(student_data):
+    result = {} 
+    for key, value in student_data.items(): 
+        if value not in result.values(): 
+           result[key] = value
+    print ("result", str(result)) 
